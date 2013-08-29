@@ -1,0 +1,23 @@
+{
+  "name": "animframe",
+  "version": "1.0.0",
+  "homepage": "https://github.com/freezedev/animframe",
+  "authors": [
+    "Johannes Stein <johannesstein@freeze-dev.com>"
+  ],
+  "description": "requestAnimationFrame shim for AMD",
+  "main": "dist/animframe.js",
+  "keywords": [
+    "requestanimationframe",
+    "animationframe",
+    "amd"
+  ],
+  "license": "UNLICENSE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
