@@ -19,10 +19,7 @@ module.exports = (grunt) ->
           'dist/<%= pkg.name %>.min.js': 'dist/<%= pkg.name %>.js'
         
 
-  grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks 'grunt-contrib-concat'
-  grunt.loadNpmTasks 'grunt-contrib-uglify'
-  grunt.loadNpmTasks 'grunt-contrib-coffee'
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
   
   grunt.registerTask 'test', 'Lints and unit tests', ['coffeelint']
   grunt.registerTask 'default', 'Default task', ['test', 'coffee', 'uglify']
