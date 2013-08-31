@@ -1,6 +1,6 @@
 vendors = ['ms', 'moz', 'webkit', 'o']
 
-define 'requestanimationframe', ['root'], (root) ->
+udefine 'requestanimationframe', ['root'], (root) ->
   {requestAnimationFrame} = root
 
   unless requestAnimationFrame
@@ -20,7 +20,7 @@ define 'requestanimationframe', ['root'], (root) ->
 
   requestAnimationFrame
 
-define 'cancelanimationframe', ['root'], (root) ->
+udefine 'cancelanimationframe', ['root'], (root) ->
   {cancelAnimationFrame} = root
 
   unless cancelAnimationFrame
