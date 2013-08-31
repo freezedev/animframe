@@ -1,9 +1,17 @@
 (function() {
+  (function(root) {
+    root.udefine.globals['requestanimationframe'] = root.requestAnimationFrame;
+    return root.udefine.globals['cancelanimationframe'] = root.cancelAnimationFrame;
+  })(this);
+
+}).call(this);
+
+(function() {
   var vendors;
 
   vendors = ['ms', 'moz', 'webkit', 'o'];
 
-  define('requestanimationframe', ['root'], function(root) {
+  udefine('requestanimationframe', ['root'], function(root) {
     var lastTime, requestAnimationFrame, x, _i, _len;
     requestAnimationFrame = root.requestAnimationFrame;
     if (!requestAnimationFrame) {
@@ -31,7 +39,7 @@
     return requestAnimationFrame;
   });
 
-  define('cancelanimationframe', ['root'], function(root) {
+  udefine('cancelanimationframe', ['root'], function(root) {
     var cancelAnimationFrame, x, _i, _len;
     cancelAnimationFrame = root.cancelAnimationFrame;
     if (!cancelAnimationFrame) {
