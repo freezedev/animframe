@@ -9,7 +9,7 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'dist/<%= pkg.name %>.js': ['src/*.coffee']
+          'dist/<%= pkg.name %>.js': ['udefine/*.coffee', 'src/*.coffee']
     uglify:
       options:
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
