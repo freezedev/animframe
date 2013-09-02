@@ -1,6 +1,6 @@
 {
   "name": "animframe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/freezedev/animframe",
   "authors": [
     "Johannes Stein <johannesstein@freeze-dev.com>"
@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "udefine": "~0.7.1"
+    "udefine": "~0.7.3"
   }
 }
