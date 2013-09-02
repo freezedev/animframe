@@ -1,7 +1,15 @@
 (function() {
   (function(root) {
-    root.udefine.globals['requestanimationframe'] = root.requestAnimationFrame;
-    return root.udefine.globals['cancelanimationframe'] = root.cancelAnimationFrame;
+    root.udefine.globals['requestanimationframe'] = void 0;
+    root.udefine.globals['cancelanimationframe'] = void 0;
+    root.udefine.inject['requestanimationframe'] = {
+      root: root,
+      name: 'requestAnimationFrame'
+    };
+    return root.udefine.inject['cancelanimationframe'] = {
+      root: root,
+      name: 'cancelAnimationFrame'
+    };
   })(this);
 
 }).call(this);
