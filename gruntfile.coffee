@@ -11,6 +11,14 @@ module.exports = (grunt) ->
       compile:
         files:
           'dist/<%= pkg.name %>.js': ['udefine/*.coffee', 'src/*.coffee']
+      tests:
+        files: [{
+          expand: true,
+          cwd: 'test/',
+          src: ['**/*.coffee'],
+          dest: 'test/',
+          ext: '.js'
+        }]
     uglify:
       options:
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
