@@ -1,11 +1,8 @@
-do (root = @) ->
-  root.udefine.globals['requestanimationframe'] = undefined
-  root.udefine.globals['cancelanimationframe'] = undefined
-  
-  root.udefine.inject['requestanimationframe'] =
-    root: root
-    name: 'requestAnimationFrame'
-  
-  root.udefine.inject['cancelanimationframe'] =
-    root: root
-    name: 'cancelAnimationFrame'
+do (names = ['requestAnimationFrame', 'cancelAnimationFrame']) ->
+  udefine.configure (root) ->
+    for n in names
+      root.udefine.inject.add [n.toLowerCase()],
+        root: root
+        name: n
+        
+    null
