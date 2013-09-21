@@ -1,16 +1,17 @@
 (function() {
-  (function(root) {
-    root.udefine.globals['requestanimationframe'] = void 0;
-    root.udefine.globals['cancelanimationframe'] = void 0;
-    root.udefine.inject['requestanimationframe'] = {
-      root: root,
-      name: 'requestAnimationFrame'
-    };
-    return root.udefine.inject['cancelanimationframe'] = {
-      root: root,
-      name: 'cancelAnimationFrame'
-    };
-  })(this);
+  (function(names) {
+    return udefine.configure(function(root) {
+      var n, _i, _len;
+      for (_i = 0, _len = names.length; _i < _len; _i++) {
+        n = names[_i];
+        root.udefine.inject.add([n.toLowerCase()], {
+          root: root,
+          name: n
+        });
+      }
+      return null;
+    });
+  })(['requestAnimationFrame', 'cancelAnimationFrame']);
 
 }).call(this);
 
