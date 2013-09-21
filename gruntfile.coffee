@@ -33,7 +33,7 @@ module.exports = (grunt) ->
       all: ['test/browser/*.html']
     template:
       all:
-        src: 'templates/browsertest.html'
+        src: 'test/templates/browsertest.html'
         dest: 'test/browser/animframe.html'
         engine: 'handlebars'
         variables:
