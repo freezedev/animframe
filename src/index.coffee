@@ -1,6 +1,6 @@
 vendors = ['ms', 'moz', 'webkit', 'o']
 
-udefine 'requestanimationframe', ['root'], (root) ->
+udefine 'requestanimationframe', ['root', 'performance'], (root, perf) ->
   {requestAnimationFrame} = root
 
   unless requestAnimationFrame
@@ -10,11 +10,11 @@ udefine 'requestanimationframe', ['root'], (root) ->
 
   unless requestAnimationFrame
     lastTime = 0
-  
+    
     requestAnimationFrame = (callback, element) ->
-      currTime = performance.now() ? Date.now()
+      currTime = perf.now()
       timeToCall = Math.max 0, 16 - (currTime - lastTime)
-      id = root.setTimeout((-> callback(currTime + timeToCall)), timeToCall)
+      id = root.setTimeout (-> callback(currTime + timeToCall)), timeToCall
       lastTime = currTime + timeToCall
       id
 
