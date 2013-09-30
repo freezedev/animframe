@@ -18,7 +18,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "udefine"
   ],
   "dependencies": {
     "udefine": "~0.8.2"
