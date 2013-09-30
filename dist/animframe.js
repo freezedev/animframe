@@ -1,10 +1,16 @@
 (function() {
+  (function(name) {
+    return udefine.configure(function(root) {
+      return udefine.inject.add(name);
+    });
+  })('performance');
+
   (function(names) {
     return udefine.configure(function(root) {
       var n, _i, _len;
       for (_i = 0, _len = names.length; _i < _len; _i++) {
         n = names[_i];
-        root.udefine.inject.add([n.toLowerCase()], {
+        udefine.inject.add([n.toLowerCase()], {
           root: root,
           name: n
         });
@@ -15,12 +21,41 @@
 
 }).call(this);
 
+/*
+  Shim for performance.now function
+*/
+
+
+(function() {
+  udefine('performance', ['root'], function(root) {
+    var performance, vendors, x, _i, _len;
+    performance = root.performance || {};
+    vendors = ['ms', 'moz', 'webkit', 'o'];
+    if (!performance.now) {
+      for (_i = 0, _len = vendors.length; _i < _len; _i++) {
+        x = vendors[_i];
+        performance.now = performance["" + x + "Now"];
+        if (performance.now) {
+          break;
+        }
+      }
+    }
+    if (!performance.now) {
+      performance.now = function() {
+        return (typeof Date.now === "function" ? Date.now() : void 0) || new Date().getTime();
+      };
+    }
+    return performance;
+  });
+
+}).call(this);
+
 (function() {
   var vendors;
 
   vendors = ['ms', 'moz', 'webkit', 'o'];
 
-  udefine('requestanimationframe', ['root'], function(root) {
+  udefine('requestanimationframe', ['root', 'performance'], function(root, perf) {
     var lastTime, requestAnimationFrame, x, _i, _len;
     requestAnimationFrame = root.requestAnimationFrame;
     if (!requestAnimationFrame) {
@@ -35,8 +70,8 @@
     if (!requestAnimationFrame) {
       lastTime = 0;
       requestAnimationFrame = function(callback, element) {
-        var currTime, id, timeToCall, _ref;
-        currTime = (_ref = performance.now()) != null ? _ref : Date.now();
+        var currTime, id, timeToCall;
+        currTime = perf.now();
         timeToCall = Math.max(0, 16 - (currTime - lastTime));
         id = root.setTimeout((function() {
           return callback(currTime + timeToCall);
