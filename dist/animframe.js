@@ -1,8 +1,10 @@
 (function() {
   (function(name) {
-    return udefine.configure(function(root) {
-      return udefine.inject.add(name);
-    });
+    if (typeof performance === "undefined" || performance === null) {
+      return udefine.configure(function(root) {
+        return udefine.inject.add(name);
+      });
+    }
   })('performance');
 
   (function(names) {
