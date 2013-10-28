@@ -20,7 +20,8 @@
     "test",
     "tests",
     "src",
-    "udefine"
+    "udefine",
+    "gruntfile.coffee"
   ],
   "dependencies": {
     "udefine": "~0.8.2"
