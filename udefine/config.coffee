@@ -1,7 +1,8 @@
 # Performance shim
 do (name = 'performance') ->
-  udefine.configure (root) ->
-    udefine.inject.add name
+  unless performance?
+    udefine.configure (root) ->
+      udefine.inject.add name
 
 # Animationframe
 do (names = ['requestAnimationFrame', 'cancelAnimationFrame']) ->
