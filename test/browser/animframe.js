@@ -1,11 +1,21 @@
 (function() {
-  var cancelAnimationFrame, chai, expect, requestAnimationFrame, udefine;
+  var cancelAnimationFrame, chai, expect, performance, requestAnimationFrame, udefine;
 
   udefine = window.udefine, chai = window.chai;
 
   expect = chai.expect;
 
-  requestAnimationFrame = window.requestAnimationFrame, cancelAnimationFrame = window.cancelAnimationFrame;
+  requestAnimationFrame = window.requestAnimationFrame, cancelAnimationFrame = window.cancelAnimationFrame, performance = window.performance;
+
+  describe('performance', function() {
+    it('performance is an object', function() {
+      return expect(performance).to.be.a('object');
+    });
+    return it('performance.now is a function', function() {
+      expect(performance).to.have.property('now');
+      return expect(performance.now).to.be.a('function');
+    });
+  });
 
   describe('Animationframe', function() {
     it('requestAnimationFrame is available', function() {
