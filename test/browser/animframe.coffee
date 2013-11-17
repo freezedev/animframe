@@ -2,7 +2,15 @@
 
 {expect} = chai
 
-{requestAnimationFrame, cancelAnimationFrame} = window
+{requestAnimationFrame, cancelAnimationFrame, performance} = window
+
+describe 'performance', ->
+  it 'performance is an object', ->
+    expect(performance).to.be.a('object')
+    
+  it 'performance.now is a function', ->
+    expect(performance).to.have.property('now')
+    expect(performance.now).to.be.a('function')
 
 describe 'Animationframe', ->
   
