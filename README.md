@@ -7,6 +7,10 @@ animframe
 
 requestAnimationFrame shim (for AMD and all the other stuff)
 
+License
+-------
+This piece of software is public domain. (See LICENSE)  
+If the Unlicense does not work for me, you may alternativly use the terms of the MIT license.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/freezedev/animframe/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
