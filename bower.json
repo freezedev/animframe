@@ -5,7 +5,7 @@
   "authors": [
     "Johannes Stein <johannesstein@freeze-dev.com>"
   ],
-  "description": "requestAnimationFrame shim for AMD",
+  "description": "requestAnimationFrame shim for AMD and CommonJS",
   "main": "dist/amd/animframe.js",
   "keywords": [
     "requestanimationframe",
