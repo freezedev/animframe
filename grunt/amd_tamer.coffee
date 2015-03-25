@@ -1,7 +1,7 @@
 module.exports =
   options:
     namespace: '<%= package.name %>'
-    base: 'dist/'
+    base: 'tmp/'
   all:
     options:
       footer: '\n//# sourceMappingURL=<%= package.name %>.js.map'
@@ -11,4 +11,4 @@ module.exports =
         'cancelanimationframe': '[\'animframe/cancelanimationframe\'], function(caf) { return caf; }'
         'performance': '[\'animframe/performance\'], function(perf) { return perf; }'
     files:
-      'dist/<%= package.name %>.js': 'dist/**/*.js'
+      'dist/amd/<%= package.name %>.js': 'tmp/**/*.js'
