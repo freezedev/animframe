@@ -7,4 +7,4 @@ module.exports =
       footer: '\n//# sourceMappingURL=<%= package.name %>.js.map'
       processName: (name) -> name.toLowerCase()
     files:
-      'dist/<%= package.name %>.all.js': 'dist/**/*.js'
+      'dist/<%= package.name %>.js': 'dist/**/*.js'
