@@ -45,6 +45,10 @@ npm-debug.log
 #########
 bower_components
 
+# Generated files #
+###################
+tmp
+
 # Sublime #
 ###########
 *.sublime-project
