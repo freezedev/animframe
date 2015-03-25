@@ -1,6 +1,6 @@
 {
   "name": "animframe",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "main": "dist/common/index.js",
   "description": "requestAnimationFrame shim for AMD and CommonJS",
   "repository": {
