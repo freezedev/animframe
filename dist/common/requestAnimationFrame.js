@@ -6,7 +6,7 @@ var vendors = ["ms", "moz", "webkit", "o"];
 
 var root = window || global;
 
-var requestAnimationFrame = window.requestAnimationFrame || {};
+var requestAnimationFrame = root.requestAnimationFrame;
 
 var performance = _interopRequire(require("./performance"));
 

@@ -4,7 +4,7 @@ var vendors = ["ms", "moz", "webkit", "o"];
 
 var root = window || global;
 
-var cancelAnimationFrame = window.cancelAnimationFrame || {};
+var cancelAnimationFrame = root.cancelAnimationFrame;
 
 if (!cancelAnimationFrame) {
   vendors.some(function (vendor) {

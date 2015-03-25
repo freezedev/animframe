@@ -5,7 +5,7 @@ define('animframe/cancelanimationframe', ["exports", "module"], function (export
 
   var root = window || global;
 
-  var cancelAnimationFrame = window.cancelAnimationFrame || {};
+  var cancelAnimationFrame = root.cancelAnimationFrame;
 
   if (!cancelAnimationFrame) {
     vendors.some(function (vendor) {
@@ -77,7 +77,7 @@ define('animframe/requestanimationframe', ["exports", "module", "./performance"]
 
   var root = window || global;
 
-  var requestAnimationFrame = window.requestAnimationFrame || {};
+  var requestAnimationFrame = root.requestAnimationFrame;
 
   var performance = _interopRequire(_performance);
 
