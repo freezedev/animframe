@@ -2,7 +2,7 @@ let vendors = ['ms', 'moz', 'webkit', 'o'];
 
 let root = window || global;
 
-let requestAnimationFrame = window.requestAnimationFrame || {};
+let {requestAnimationFrame} = root;
 
 import performance from './performance';
 
