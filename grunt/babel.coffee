@@ -1,13 +1,21 @@
 module.exports =
   options:
     sourceMap: true
-    loose: ['es6.classes']
-  dist:
+  dist_amd:
     options:
-      modules: 'umd'
+      modules: 'amd'
     files: [{
       expand: true,
       cwd: 'src',
       src: ['**/*.js'],
-      dest: 'dist/'
+      dest: 'tmp/'
+    }]
+  dist_common:
+    options:
+      modules: 'common'
+    files: [{
+      expand: true,
+      cwd: 'src',
+      src: ['**/*.js'],
+      dest: 'dist/common/'
     }]
