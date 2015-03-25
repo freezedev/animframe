@@ -2,7 +2,7 @@ let vendors = ['ms', 'moz', 'webkit', 'o'];
 
 let root = window || global;
 
-let cancelAnimationFrame = window.cancelAnimationFrame || {};
+let {cancelAnimationFrame} = root;
 
 if (!cancelAnimationFrame) {
   vendors.some(function(vendor) {
