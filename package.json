@@ -11,7 +11,6 @@
     "grunt-contrib-uglify": "^0.8.0",
     "grunt-karma": "^0.10.1",
     "grunt-mocha": "~0.4.1",
-    "grunt-templater": "~0.0.4",
     "handlebars": "^3.0.0",
     "jit-grunt": "^0.9.1",
     "karma-chai": "^0.1.0",
@@ -22,6 +21,7 @@
     "time-grunt": "^1.1.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "grunt": "grunt",
+    "test": "npm run grunt test"
   }
 }
