@@ -2,6 +2,11 @@
   "name": "animframe",
   "version": "1.1.5",
   "main": "dist/common/index.js",
+  "description": "requestAnimationFrame shim for AMD and CommonJS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freezedev/animframe.git"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-amd-tamer": "^0.1.14",
