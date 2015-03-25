@@ -7,11 +7,9 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['mocha', 'chai'],
     files: [
-      'src/**/*.js',
       'test/**/*.js'
     ],
     preprocessors: {
-      'src/**/*.js': ['webpack'],
       'test/**/*.js': ['webpack']
     },
     webpack: {
@@ -20,6 +18,11 @@ module.exports = function (config) {
         loaders: [
           { test: /\.js$/, loader: 'babel-loader' }
         ]
+      },
+      resolve: {
+        alias: {
+          'animframe': path.join(process.cwd(), 'dist/common')
+        }
       }
     },
 
